@@ -16,5 +16,6 @@ CREATE TABLE transactions (
   tx_value FLOAT,
   merchant VARCHAR(255),
   category VARCHAR(255),
-  time_stamp TIMESTAMP
+  time_stamp TIMESTAMP,
+  user_id INT NOT NULL REFERENCES users(id)
 );
