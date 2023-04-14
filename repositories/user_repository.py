@@ -21,3 +21,14 @@ def select_all():
         user = User(row['first_name'], row['last_name'], row['dob'], row['city'], row['email'], row['budget'], row['id'] )
         users.append(user)
     return users
+
+def select(id):
+    user = None
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        user = User(result['first_name'], result['last_name'], result['dob'], result['city'], result['email'], result ['budget'], result['id'] )
+    return user

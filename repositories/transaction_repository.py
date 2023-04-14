@@ -23,3 +23,15 @@ def select_all():
         transaction = Transaction(row['tx_value'], row['merchant'], row['category'], row['time_stamp'], user, row['id'] )
         transactions.append(transaction)
     return transactions
+
+def select(id):
+    transaction = None
+    sql = "SELECT * FROM transactions WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        user = user_repository.select(result['user_id'])
+        transaction = Transaction(result['tx_value'], result['merchant'], result['category'], result['time_stamp'], user, result['id'] )
+    return transaction
