@@ -32,3 +32,7 @@ def select(id):
         result = results[0]
         user = User(result['first_name'], result['last_name'], result['dob'], result['city'], result['email'], result ['budget'], result['id'] )
     return user
+
+def delete_all():
+    sql = "DELETE FROM users"
+    run_sql(sql)
