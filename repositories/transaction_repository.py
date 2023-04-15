@@ -37,7 +37,6 @@ def select_tx_by_id(id):
         transaction = Transaction(result['tx_value'], result['merchant'], result['category'], result['time_stamp'], user, result['id'] )
     return transaction
 
-
 def delete_all():
     sql = "DELETE FROM transactions"
     run_sql(sql)

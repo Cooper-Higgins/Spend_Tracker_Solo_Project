@@ -20,9 +20,13 @@ user_repository.select_all()
 
 category_1 = Category('Travel')
 category_repository.create(category_1)
+category_2 = Category('Bars')
+category_repository.create(category_2)
 
 merchant_1 = Merchant('British Airways')
 merchant_repository.create(merchant_1)
+merchant_2 = Merchant('Nikki Beach')
+merchant_repository.create(merchant_2)
 
 transaction_1 = Transaction(10.00, 'Lidl', 'Supermarkets', '01/04/2023 17:48:59', user_1)
 transaction_repository.create(transaction_1)

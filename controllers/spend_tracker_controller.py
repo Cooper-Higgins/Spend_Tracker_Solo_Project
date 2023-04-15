@@ -2,8 +2,12 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.transaction import Transaction
 from models.user import User
+from models.category import Category
+from models.merchant import Merchant
 import repositories.transaction_repository as transaction_repository
 import repositories.user_repository as user_repository
+import repositories.category_repository as category_repository
+import repositories.merchant_repository as merchant_repository
 
 spend_tracker_blueprint = Blueprint("spend_tracker", __name__)
 
@@ -21,16 +25,26 @@ def transactions_index():
     return render_template("/transactions/index.html", transactions=transactions)
 
 
-@spend_tracker_blueprint.route("/merchants/")
-def merchants_index():
-    transactions = transaction_repository.select_all() 
-    return render_template("/merchants/index.html", transactions=transactions)
+# @spend_tracker_blueprint.route("/merchants/")
+# def merchants_index():
+#     transactions = transaction_repository.select_all() 
+#     return render_template("/merchants/index.html", transactions=transactions)
 
+
+# @spend_tracker_blueprint.route("/categories/")
+# def categories_index():
+#     transactions = transaction_repository.select_all() 
+#     return render_template("/categories/index.html", transactions=transactions)
 
 @spend_tracker_blueprint.route("/categories/")
 def categories_index():
-    transactions = transaction_repository.select_all() 
-    return render_template("/categories/index.html", transactions=transactions)
+     categories = category_repository.select_all() 
+     return render_template("/categories/index.html", categories=categories)
+
+@spend_tracker_blueprint.route("/merchants/")
+def merchants_index():
+    merchants = merchant_repository.select_all() 
+    return render_template("/merchants/index.html", merchants=merchants)
 
 
 @spend_tracker_blueprint.route("/account/")
@@ -56,10 +70,17 @@ def create_transaction():
 
 @spend_tracker_blueprint.route('/merchants', methods=['POST'])
 def create_merchant():
+    merchant = request.form['merchant']
+    merchant = Merchant(merchant)
+    merchant_repository.create(merchant)
     return redirect('/merchants')
+
 
 @spend_tracker_blueprint.route("/categories", methods=['POST'])
 def create_category():
+    category = request.form['category']
+    category = Category(category)
+    category_repository.create(category)
     return redirect('/categories')
 
 
