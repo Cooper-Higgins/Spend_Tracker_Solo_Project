@@ -1,6 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Transactions</h2>
+<h1>Transactions</h1>
+
+<h2>Add a new transaction:</h2>
+<form action="/transactions" method="POST">
+    <div>
+      <label for="merchant">Merchant:</label>
+      <input type="text" id="merchant" name="merchant" placeholder="i.e. Tesco" required autofocus>
+    </div>
+  
+    <div>
+      <label for="tx_value">Spent:</label>
+      <input type="number" id="tx_value" name="tx_value" placeholder="i.e. £10.00" required>
+    </div>
+  
+    <div>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" placeholder="i.e. Supermarket" required>
+    </div>
+  
+    <div>
+      <label for="time_stamp">Transaction Date:</label>
+      <input type="date" id="time_stamp" name="time_stamp" required>
+    </div>
+    
+    <button type="submit">Add Transaction</button>
+  
+</form>
+
+{% for transaction in transactions %}
+  <div class="transactions">
+    <div class="content">
+      {{transaction.merchant}}
+      <div class="description">
+        <a href="/transaction/{{transaction.id}}">{{transaction.id}}</a>
+        <span class="value">£{{transaction.tx_value}}</span>
+      </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/transactions/{{transaction.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-trash-o fa-2x" style="color:red" aria-hidden="true"></i></button>
+          </form>
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
 
 {% endblock %}
