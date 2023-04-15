@@ -1,6 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Merchants</h2>
+<h1>Merchants</h1>
+
+<h3>Add a new merchant:</h3>
+<form action="/merchants" method="POST">
+    <div>
+      <label for="merchant">Merchant:</label>
+      <input type="text" id="merchant" name="merchant" placeholder="i.e. Tesco" required autofocus>
+    </div>
+    <br>
+    <button type="submit">Add Merchant</button>
+</form>
+<br>
+
+<hr>
+
+<h3>Your merchants:</h3>
+{% for transaction in transactions %}
+  <div class="merchants">
+    <div class="content">
+      {{transaction.merchant}}
+    </div>
+    <div class="buttons">
+        <form class="delete-form" action="/merchants/{{transaction.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-trash-o fa-2x" style="color:red" aria-hidden="true"></i></button>
+          </form>
+      </div>
+  </div>
+{% endfor %}
 
 {% endblock %}

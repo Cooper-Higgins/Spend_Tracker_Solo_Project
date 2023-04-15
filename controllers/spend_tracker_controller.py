@@ -23,17 +23,20 @@ def transactions_index():
 
 @spend_tracker_blueprint.route("/merchants/")
 def merchants_index():
-    return render_template("/merchants/index.html")
+    transactions = transaction_repository.select_all() 
+    return render_template("/merchants/index.html", transactions=transactions)
 
 
 @spend_tracker_blueprint.route("/categories/")
 def categories_index():
-    return render_template("/categories/index.html")
+    transactions = transaction_repository.select_all() 
+    return render_template("/categories/index.html", transactions=transactions)
 
 
 @spend_tracker_blueprint.route("/account/")
 def account_index():
-    return render_template("/account/index.html")
+    users = user_repository.select_all()
+    return render_template("/account/index.html", users=users)
 
 
 ### - POST / Create Routes - ###

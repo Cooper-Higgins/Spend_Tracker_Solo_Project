@@ -1,6 +1,84 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Account</h2>
+{% for user in users%}
+<h1>{{user.first_name}}, manage your account:</h1>
+{% endfor %}
+
+<h3>Budget:</h3>
+{% for user in users %}
+    <div class="account_details">
+        Current Budget: £{{user.budget}}
+
+        <form class="update-form" action="/account/{{user.budget}}/update" method="POST">
+            <div>
+              <label for="budget">New Budget:</label>
+              <input type="number" id="budget" name="budget" placeholder="500.00" required autofocus>
+            </div>
+            <br>
+            <button type="submit">Update Budget</button>
+        </form>
+        <br>
+        <hr>
+
+<h3>Personal Details:</h3>
+        <div class="account_details">
+            <form class="update-form" action="/account/{{user.first_name}}/update" method="POST">
+                <div>
+                <label for="first_name">{{user.first_name}}, what's your new forename?</label>
+                <input type="text" id="first_name" name="first_name" placeholder="Samwise">
+                </div>
+                <br>
+                <button type="submit">Update Forename</button>
+            </form>
+        <br>
+
+        <div class="account_details">
+            <form class="update-form" action="/account/{{user.last_name}}/update" method="POST">
+                <div>
+                  <label for="last_name">{{user.first_name}}, what's your new surname?</label>
+                  <input type="text" id="last_name" name="last_name" placeholder="Gamgee">
+                </div>
+                <br>
+                <button type="submit">Update Surname</button>
+            </form>
+        <br>
+        
+        <div class="account_details">
+            <form class="update-form" action="/account/{{user.last_name}}/update" method="POST">
+                <div>
+                  <label for="dob">Did we get your birthday ({{user.dob}}) wrong?</label>
+                  <input type="date" id="dob" name="dob">
+                </div>
+                <br>
+                <button type="submit">Update Date of Birth</button>
+            </form>
+        <br>
+
+        <div class="account_details">
+            <form class="update-form" action="/account/{{user.city}}/update" method="POST">
+                <div>
+                  <label for="city">Moved from {{user.city}}? Where do you stay now?</label>
+                  <input type="text" id="city" name="city">
+                </div>
+                <br>
+                <button type="submit">Update City</button>
+            </form>
+        <br>
+
+        <div class="account_details">
+            <form class="update-form" action="/account/{{user.email}}/update" method="POST">
+                <div>
+                  <label for="email">Should we reach you on {{user.email}}, or not?</label>
+                  <input type="text" id="email" name="email">
+                </div>
+                <br>
+                <button type="submit">Update Email</button>
+            </form>
+        <br>
+
+    </div>
+  </div>
+{% endfor %}
 
 {% endblock %}

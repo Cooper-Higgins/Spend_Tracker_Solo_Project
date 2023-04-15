@@ -24,20 +24,6 @@ def select_all():
         transactions.append(transaction)
     return transactions
 
-
-# def select_all_merchants():
-#     merchants = []
-
-#     sql = "SELECT merchant FROM transactions"
-#     results = run_sql(sql)
-
-#     for row in results:
-#         user = user_repository.select(row['user_id'])
-#         merchant = Transaction(row['tx_value'], row['merchant'], row['category'], row['time_stamp'], user, row['id'] )
-#         merchants.append(merchant)
-#     return merchants
-
-
 def select_tx_by_id(id):
     transaction = None
 

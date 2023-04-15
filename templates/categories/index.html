@@ -1,6 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Categories</h2>
+<h1>Categories</h1>
+
+<h3>Add a new category:</h3>
+<form action="/categories" method="POST">
+    <div>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" placeholder="i.e. Supermarket" required autofocus>
+    </div>
+    <br>
+    <button type="submit">Add Category</button>
+</form>
+<br>
+
+<hr>
+
+<h3>Your categories:</h3>
+{% for transaction in transactions %}
+  <div class="categories">
+    <div class="content">
+      {{transaction.category}}
+    </div>
+    <div class="buttons">
+        <form class="delete-form" action="/merchants/{{transaction.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-trash-o fa-2x" style="color:red" aria-hidden="true"></i></button>
+          </form>
+      </div>
+  </div>
+{% endfor %}
 
 {% endblock %}
