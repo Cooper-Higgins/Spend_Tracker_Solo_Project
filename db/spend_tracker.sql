@@ -5,7 +5,7 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  dob TIMESTAMP,
+  dob DATE,
   city VARCHAR(255),
   email VARCHAR(255),
   budget FLOAT
