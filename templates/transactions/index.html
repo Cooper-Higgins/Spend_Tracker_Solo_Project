@@ -5,8 +5,9 @@
 
   <h2>Your transaction highlights:</h2>
     <ul>
-      <li>£X this week at X merchants</li>
-      <li>£XXX this month at X merchants</li>
+      <li>You've tracked £X of spending</li>
+      <li>You've spent £X this week at X merchants</li>
+      <li>And £XXX last month at X merchants</li>
     </ul>
 
   <hr>
@@ -28,7 +29,7 @@
       </div>
 
       <div>
-        <label for="category">On:</label>
+        <label for="category">Under:</label>
         <select id="category" name="category">
           {% for transaction in transactions %}
             <option value="{{ transaction.category }}">{{ transaction.category }}</option>
@@ -37,10 +38,10 @@
       </div>
 
       <div>
-        <label for="time_stamp">Transaction Date:</label>
+        <label for="time_stamp">On:</label>
         <input type="date" id="time_stamp" name="time_stamp" required>
       </div>
-      
+      <br>
       <button type="submit">Add Transaction</button>
   </form>
 <br>

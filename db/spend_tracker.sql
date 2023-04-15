@@ -1,5 +1,7 @@
 DROP TABLE transactions;
 DROP TABLE users;
+DROP TABLE categories;
+DROP TABLE merchants;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -9,6 +11,16 @@ CREATE TABLE users (
   city VARCHAR(255),
   email VARCHAR(255),
   budget FLOAT
+);
+
+CREATE TABLE merchants (
+  id SERIAL PRIMARY KEY,
+  merchant VARCHAR(255)
+);
+
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY,
+  category VARCHAR(255)
 );
 
 CREATE TABLE transactions (
