@@ -58,3 +58,11 @@ def create_merchant():
 @spend_tracker_blueprint.route("/categories", methods=['POST'])
 def create_category():
     return redirect('/categories')
+
+
+### - POST / Delete Routes - ###
+
+@spend_tracker_blueprint.route("/transactions/<id>/delete", methods=['POST'])
+def delete_transaction(id):
+    transaction_repository.delete(id)
+    return redirect('/transactions')

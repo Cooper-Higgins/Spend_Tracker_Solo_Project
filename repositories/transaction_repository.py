@@ -24,8 +24,23 @@ def select_all():
         transactions.append(transaction)
     return transactions
 
-def select(id):
+
+# def select_all_merchants():
+#     merchants = []
+
+#     sql = "SELECT merchant FROM transactions"
+#     results = run_sql(sql)
+
+#     for row in results:
+#         user = user_repository.select(row['user_id'])
+#         merchant = Transaction(row['tx_value'], row['merchant'], row['category'], row['time_stamp'], user, row['id'] )
+#         merchants.append(merchant)
+#     return merchants
+
+
+def select_tx_by_id(id):
     transaction = None
+
     sql = "SELECT * FROM transactions WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
@@ -35,6 +50,7 @@ def select(id):
         user = user_repository.select(result['user_id'])
         transaction = Transaction(result['tx_value'], result['merchant'], result['category'], result['time_stamp'], user, result['id'] )
     return transaction
+
 
 def delete_all():
     sql = "DELETE FROM transactions"
