@@ -34,7 +34,9 @@
         <label for="category_name">Under:</label>
         <select id="category_name" name="category_name">
           {% for category in categories %}
+            {% if category.inactive == False %}
             <option value="{{ category.id }}">{{ category.category_name }}</option>
+            {% endif %}
           {% endfor %}
         </select>
       </div>
