@@ -4,7 +4,13 @@
 <div>
   <h1>Update Category</h1>
   <h2>{{category.category_name}}</h2>
-  <p>{{category.inactive}}
+  <p>Current Status: 
+    {% if category.inactive == False %} 
+      Active
+    {% else %}
+      Inactive
+    {% endif %}
+  </p>
   <hr>
 </div>
 
@@ -19,16 +25,9 @@
     <div>
       <label for="inactive">Set Category Status:</label>
       <select id="inactive" name="inactive">
-
-        <option value="true"
-          {% if category.inactive == True %} selected="selected" {% endif %}>
-          Inactive
-        </option>
-
-        <option value="false"
-          {% if category.inactive == False %} selected="selected" {% endif %}>
-          Active
-        </option>
+        <option value="false">Active</option>
+        <option value="true">Inactive</option>
+      </select>
     </div>
   </form>
 </div>
