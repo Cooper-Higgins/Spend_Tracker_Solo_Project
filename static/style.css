@@ -105,3 +105,10 @@ footer {
     'footer footer';
     grid-template: 30% 70%;
 }
+
+.all-transactions {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+    flex-wrap: wrap;
+}

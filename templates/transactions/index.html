@@ -64,16 +64,18 @@
 <br>
 
 <h3>Your transactions:</h3>
-  {% for transaction in transactions %}
-    <div class="transaction">
-      <div class="content">
-        <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
-        <p class="tx_merchant">At: {{transaction.merchant_name}}</p>
-        <p class="tx_category">Under: {{transaction.category_name}}</p>
-        <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
+  <div class="all-transactions">   
+    {% for transaction in transactions %}
+      <div class="transaction">
+        <div class="content">
+          <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
+          <p class="tx_merchant">At: {{transaction.merchant_name}}</p>
+          <p class="tx_category">Under: {{transaction.category_name}}</p>
+          <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
+        </div>
       </div>
-    </div>
     <br>
   {% endfor %}
+  </div>
 
 {% endblock %}
