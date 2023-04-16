@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Transactions</h1>
-
-  <h2>Your transaction highlights:</h2>
+<h1>Your Transactions</h1>
     <ul>
       <li>You've tracked £(total_value function) of spending </li>
       <li>You've spent £X (value_last_seven) this week at X merchants</li>
     </ul>
+    <hr>
 
   <h3>Add a new transaction:</h3>
     <form action="/transactions" method="POST">  
@@ -59,11 +58,11 @@
 
 <div class="sidebar" style="width:100%"><div style="height:0;padding-bottom:56.69291338582677%;position:relative;width:100%"><iframe allowfullscreen="" frameBorder="0" height="100%" src="https://giphy.com/embed/qXR53U25GPeocwivdd/video" style="left:0;position:absolute;top:0" width="100%"></iframe></div></div>
 
-<h3>Sort out your spending:</h3>
-  <p>Placeholder for filter</p>
 <br>
+<hr>
 
-<h3>Your transactions:</h3>
+<h3>Filter your transactions:</h3>
+<p>placeholder for filter form</p>
   <div class="all-transactions">   
     {% for transaction in transactions %}
       <div class="transaction">
@@ -74,7 +73,6 @@
           <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
         </div>
       </div>
-    <br>
   {% endfor %}
   </div>
 
