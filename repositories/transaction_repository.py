@@ -5,8 +5,8 @@ from models.user import User
 import repositories.user_repository as user_repository
 
 def create(transaction):
-    sql = "INSERT INTO transactions (tx_value, merchant, category, time_stamp, user_id) VALUES (%s, %s, %s, %s, %s) RETURNING *"
-    values = [transaction.tx_value, transaction.merchant, transaction.category, transaction.time_stamp, transaction.user.id]
+    sql = "INSERT INTO transactions (tx_value, merchant_name, category_name, time_stamp, user_id) VALUES (%s, %s, %s, %s, %s) RETURNING *"
+    values = [transaction.tx_value, transaction.merchant_name, transaction.category_name, transaction.time_stamp, transaction.user.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     transaction.id = id
@@ -20,7 +20,7 @@ def select_all():
 
     for row in results:
         user = user_repository.select(row['user_id'])
-        transaction = Transaction(row['tx_value'], row['merchant'], row['category'], row['time_stamp'], user, row['id'] )
+        transaction = Transaction(row['tx_value'], row['merchant_name'], row['category_name'], row['time_stamp'], user, row['id'] )
         transactions.append(transaction)
     return transactions
 
@@ -34,7 +34,7 @@ def select_tx_by_id(id):
     if results:
         result = results[0]
         user = user_repository.select(result['user_id'])
-        transaction = Transaction(result['tx_value'], result['merchant'], result['category'], result['time_stamp'], user, result['id'] )
+        transaction = Transaction(result['tx_value'], result['merchant_name'], result['category_name'], result['time_stamp'], user, result['id'] )
     return transaction
 
 def delete_all():
@@ -47,7 +47,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(transaction):
-    sql = "UPDATE transactions SET (tx_value, merchant, category, time_stamp, user_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [transaction.tx_value, transaction.merchant, transaction.category, transaction.time_stamp, transaction.user.id, transaction.id]
+    sql = "UPDATE transactions SET (tx_value, merchant_name, category_name, time_stamp, user_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [transaction.tx_value, transaction.merchant_name, transaction.category_name, transaction.time_stamp, transaction.user.id, transaction.id]
     print(values)
     run_sql(sql, values)

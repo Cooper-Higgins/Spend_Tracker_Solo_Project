@@ -46,3 +46,15 @@ def update(user):
     sql = "UPDATE users SET (first_name, last_name, dob, city, email, budget) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [user.first_name, user.last_name, user.dob, user.city, user.email, user.budget, user.id]
     run_sql(sql, values)
+
+def transactions(user):
+    transactions = []
+
+    sql = "SELECT * FROM transactions WHERE user_id = %s"
+    values = [user.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        transaction = Transaction(row['tx_value'], row['merchant_name'], row['category_name'], row['time_stamp'], row['user_id'], row['id'])
+        transactions.append(transaction)
+    return transactions

@@ -1,7 +1,7 @@
 DROP TABLE transactions;
-DROP TABLE users;
 DROP TABLE categories;
 DROP TABLE merchants;
+DROP TABLE users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -28,8 +28,8 @@ CREATE TABLE categories (
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   tx_value FLOAT,
-  merchant VARCHAR(255),
-  category VARCHAR(255),
+  merchant_name VARCHAR(255),
+  category_name VARCHAR(255),
   time_stamp TIMESTAMP,
   user_id INT NOT NULL REFERENCES users(id)
 );

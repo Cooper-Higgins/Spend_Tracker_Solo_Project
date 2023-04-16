@@ -5,7 +5,7 @@
 
   <h2>Your transaction highlights:</h2>
     <ul>
-      <li>You've tracked £X of spending</li>
+      <li>You've tracked £X of spending </li>
       <li>You've spent £X this week at X merchants</li>
       <li>And £XXX last month at X merchants</li>
     </ul>
@@ -16,23 +16,23 @@
     <form action="/transactions" method="POST">  
       <div>
         <label for="tx_value">Spent:</label>
-        <input type="number" id="tx_value" name="tx_value" placeholder="i.e. £10.00" required>
+        <input type="number" id="tx_value" name="tx_value" placeholder="10.00" required>
       </div>
       
       <div>
-        <label for="merchant">At:</label>
-        <select id="merchant" name="merchant">
-          {% for transaction in transactions %}
-            <option value="{{ transaction.merchant }}">{{ transaction.merchant }}</option>
+        <label for="merchant_name">At:</label>
+        <select id="merchant_name" name="merchant_name">
+          {% for merchant in merchants %}
+            <option value="{{ merchant.id }}">{{ merchant.merchant_name }}</option>
           {% endfor %}
         </select>
       </div>
 
       <div>
-        <label for="category">Under:</label>
-        <select id="category" name="category">
-          {% for transaction in transactions %}
-            <option value="{{ transaction.category }}">{{ transaction.category }}</option>
+        <label for="category_name">Under:</label>
+        <select id="category_name" name="category_name">
+          {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.category_name }}</option>
           {% endfor %}
         </select>
       </div>
@@ -41,6 +41,16 @@
         <label for="time_stamp">On:</label>
         <input type="date" id="time_stamp" name="time_stamp" required>
       </div>
+
+      <div>
+        <label for="user">For:</label>
+        <select id="user" name="user_id">
+          {% for user in users %}
+            <option value="{{ user.id }}">{{ user.first_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
       <br>
       <button type="submit">Add Transaction</button>
   </form>
@@ -60,7 +70,7 @@
     <div class="transaction">
       <div class="content">
         <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
-        <p class="tx_description">At: {{transaction.merchant}} | ({{transaction.category}}) </p>
+        <p class="tx_description">At: {{transaction.merchant_name}} | ({{transaction.category_name}}) </p>
         <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
       </div>
     </div>
