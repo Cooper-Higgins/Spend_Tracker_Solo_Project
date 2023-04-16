@@ -3,8 +3,8 @@ from db.run_sql import run_sql
 from models.merchant import Merchant
 
 def create(merchant):
-    sql = "INSERT INTO merchants (merchant) VALUES (%s) RETURNING *"
-    values = [merchant.merchant]
+    sql = "INSERT INTO merchants (merchant_name, inactive) VALUES (%s, %s) RETURNING *"
+    values = [merchant.merchant_name, merchant.inactive]
     results = run_sql(sql, values)
     id = results[0]['id']
     merchant.id = id
@@ -17,7 +17,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        merchant = Merchant(row['merchant'])
+        merchant = Merchant(row['merchant_name'], row['inactive'], row['id'])
         merchants.append(merchant)
     return merchants
 
@@ -29,7 +29,7 @@ def select(id):
 
     if results:
         result = results[0]
-        merchant = Merchant(result['merchant'])
+        merchant = Merchant(result['merchant_name'], result['inactive'], result['id'])
     return merchant
 
 def delete_all():
@@ -42,6 +42,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(merchant):
-    sql = "UPDATE merchants SET (merchant) = %s WHERE id = %s"
-    values = [merchant.merchant]
+    sql = "UPDATE merchants SET (merchant_name, inactive) = (%s, %s) WHERE id = %s"
+    values = [merchant.merchant_name, merchant.inactive, merchant.id]
     run_sql(sql, values)

@@ -1,32 +1,32 @@
-from models.transaction import Transaction
 from models.user import User
 from models.category import Category
 from models.merchant import Merchant
+from models.transaction import Transaction
 
-import repositories.transaction_repository as transaction_repository
 import repositories.user_repository as user_repository
 import repositories.category_repository as category_repository
 import repositories.merchant_repository as merchant_repository
+import repositories.transaction_repository as transaction_repository
 
-transaction_repository.delete_all()
 user_repository.delete_all()
 category_repository.delete_all()
 merchant_repository.delete_all()
+transaction_repository.delete_all()
 
 user_1 = User('Sam', 'Fire', '01/01/1990', 'Glasgow', 'sam.fire@gmail.com', 1000.00)
 user_repository.create(user_1)
 
 user_repository.select_all()
 
-category_1 = Category('Travel')
-category_repository.create(category_1)
-category_2 = Category('Bars')
-category_repository.create(category_2)
+category_travel = Category('Travel')
+category_repository.create(category_travel)
+category_bars = Category('Bars')
+category_repository.create(category_bars)
 
-merchant_1 = Merchant('British Airways')
-merchant_repository.create(merchant_1)
-merchant_2 = Merchant('Nikki Beach')
-merchant_repository.create(merchant_2)
+merchant_british_airways = Merchant('British Airways', False)
+merchant_repository.create(merchant_british_airways)
+merchant_fly_south = Merchant('Fly South', False)
+merchant_repository.create(merchant_fly_south)
 
 transaction_1 = Transaction(10.00, 'Lidl', 'Supermarkets', '01/04/2023 17:48:59', user_1)
 transaction_repository.create(transaction_1)

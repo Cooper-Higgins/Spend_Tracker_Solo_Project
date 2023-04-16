@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+  <h1>Update Category</h1>
+  <h2>{{category.category_name}}</h2>
+  <p>{{category.inactive}}
+  <hr>
+</div>
+
+<div>
+  <form action="/categories/{{category.id}}" method="post">    
+    <button type="submit">Update Category</button>
+    <div>
+      <label for="category">Name:</label>
+      <input type="text" id="category_name" name="category_name" value="{{category.name}}" required autofocus>
+    </div>
+
+    <div>
+      <label for="inactive">Set Category Status:</label>
+      <select id="inactive" name="inactive">
+
+        <option value="true"
+          {% if category.inactive == True %} selected="selected" {% endif %}>
+          Inactive
+        </option>
+
+        <option value="false"
+          {% if category.inactive == False %} selected="selected" {% endif %}>
+          Active
+        </option>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

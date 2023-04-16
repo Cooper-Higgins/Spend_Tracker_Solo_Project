@@ -15,12 +15,14 @@ CREATE TABLE users (
 
 CREATE TABLE merchants (
   id SERIAL PRIMARY KEY,
-  merchant VARCHAR(255)
+  merchant_name VARCHAR(255),
+  inactive BOOLEAN
 );
 
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY,
-  category VARCHAR(255)
+  category_name VARCHAR(255),
+  inactive BOOLEAN
 );
 
 CREATE TABLE transactions (

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+  <h1>Update Merchant</h1>
+  <h2>{{merchant.merchant_name}}</h2>
+  <p>{{merchant.inactive}}
+  <hr>
+</div>
+
+<div>
+  <form action="/merchants/{{merchant.id}}" method="post">    
+    <button type="submit">Update Merchant</button>
+    <div>
+      <label for="merchant">Name:</label>
+      <input type="text" id="merchant_name" name="merchant_name" value="{{merchant.name}}" required autofocus>
+    </div>
+
+    <div>
+      <label for="inactive">Set Merchant Status:</label>
+      <select id="inactive" name="inactive">
+
+        <option value="true"
+          {% if merchant.inactive == True %} selected="selected" {% endif %}>
+          Inactive
+        </option>
+
+        <option value="false"
+          {% if merchant.inactive == False %} selected="selected" {% endif %}>
+          Active
+        </option>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
