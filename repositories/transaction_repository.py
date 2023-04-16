@@ -1,7 +1,6 @@
 from db.run_sql import run_sql
 
 from models.transaction import Transaction
-from models.user import User
 import repositories.user_repository as user_repository
 
 def create(transaction):
@@ -51,3 +50,9 @@ def update(transaction):
     values = [transaction.tx_value, transaction.merchant_name, transaction.category_name, transaction.time_stamp, transaction.user.id, transaction.id]
     print(values)
     run_sql(sql, values)
+
+# Need to find a way to call this in transactions/index.html 
+def total_value():
+    sql = "SELECT SUM(tx_value) FROM transactions"
+    results = run_sql(sql)
+    return results

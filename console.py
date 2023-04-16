@@ -15,7 +15,6 @@ transaction_repository.delete_all()
 
 user_1 = User('Sam', 'Fire', '01/01/1990', 'Glasgow', 'sam.fire@gmail.com', 1000.00)
 user_repository.create(user_1)
-
 user_repository.select_all()
 
 category_travel = Category('Travel')

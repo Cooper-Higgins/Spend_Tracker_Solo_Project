@@ -5,7 +5,7 @@
 
   <h2>Your transaction highlights:</h2>
     <ul>
-      <li>You've tracked £X of spending </li>
+      <li>You've tracked £(total_value function) of spending </li>
       <li>You've spent £X this week at X merchants</li>
       <li>And £XXX last month at X merchants</li>
     </ul>
@@ -60,7 +60,6 @@
 
 <h3>Sort out your spending:</h3>
   <p>Placeholder for filter</p>
-
 <br>
 
 <h3>Your transactions:</h3>
@@ -68,7 +67,8 @@
     <div class="transaction">
       <div class="content">
         <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
-        <p class="tx_description">At: {{transaction.merchant_name}} | ({{transaction.category_name}}) </p>
+        <p class="tx_merchant">At: {{transaction.merchant_name}}</p>
+        <p class="tx_category">Under: {{transaction.category_name}}</p>
         <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
       </div>
     </div>
