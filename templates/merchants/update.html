@@ -4,7 +4,13 @@
 <div>
   <h1>Update Merchant</h1>
   <h2>{{merchant.merchant_name}}</h2>
-  <p>{{merchant.inactive}}
+  <p>Current Status: 
+    {% if merchant.inactive == False %} 
+      Active
+    {% else %}
+      Inactive
+    {% endif %}
+  </p>
   <hr>
 </div>
 
