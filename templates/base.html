@@ -9,24 +9,25 @@
   <title>Spend Hacker</title>
 </head>
 <body>
-  <header>
-      <nav>
-        <ul class="menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/transactions/">Transactions</a></li>
-          <li><a href="/merchants/">Merchants</a></li>
-          <li><a href="/categories/">Categories</a></li>
-          <li><a href="/account/">Account</a></li>
-        </ul>
-      </nav>
-  </header>
-    <div class="container">
-      {% block content %}
-      {% endblock %}
-    </div>
-  <footer>
-    <br>
-    <div> © Spend Hacker 🦄</div>
-  </footer>
+  <div id="grid-container">
+    <header>
+        <nav>
+          <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/transactions/">Transactions</a></li>
+            <li><a href="/merchants/">Merchants</a></li>
+            <li><a href="/categories/">Categories</a></li>
+            <li><a href="/account/">Account</a></li>
+          </ul>
+        </nav>
+    </header>
+      <section class="main-content">
+        {% block content %}
+        {% endblock %}
+      </section>
+    <footer>
+      <div> © Spend Hacker 🦄</div>
+    </footer>
+  </div>
 </body>
 </html>
