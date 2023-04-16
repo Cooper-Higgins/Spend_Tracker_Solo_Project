@@ -6,3 +6,12 @@ class Transaction:
         self.time_stamp = time_stamp
         self.user = user
         self.id = id
+
+
+def total_value(self, transactions):
+    self.total_value = 0
+
+    for transaction in transactions:
+        total_value += transaction['tx_value']
+
+    return self.total_value

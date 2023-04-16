@@ -6,9 +6,9 @@
 {% endfor %}
 
 
-{% for user in users %}
 
 <h3>Budget:</h3>
+{% for user in users %}
 <div class="account_details">
     Current Budget: £{{user.budget}}
 
@@ -78,7 +78,8 @@
                 <button type="submit">Update Email</button>
             </form>      
     </div>
+    {% endfor %}
   </div>
-{% endfor %}
+
 
 {% endblock %}

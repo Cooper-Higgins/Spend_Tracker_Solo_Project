@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Spend Tracker</title>
+  <title>Spend Hacker</title>
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/transactions/">Transactions</a></li>
-        <li><a href="/merchants/">Merchants</a></li>
-        <li><a href="/categories/">Categories</a></li>
-        <li><a href="/account/">Account</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/transactions/">Transactions</a></li>
+          <li><a href="/merchants/">Merchants</a></li>
+          <li><a href="/categories/">Categories</a></li>
+          <li><a href="/account/">Account</a></li>
+        </ul>
+      </nav>
   </header>
     <div class="container">
       {% block content %}
@@ -26,8 +26,7 @@
     </div>
   <footer>
     <br>
-    <hr>
-    <p> Footer ok </p>
+    <div> © Spend Hacker 🦄</div>
   </footer>
 </body>
 </html>
