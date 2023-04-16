@@ -23,7 +23,9 @@
         <label for="merchant_name">At:</label>
         <select id="merchant_name" name="merchant_name">
           {% for merchant in merchants %}
+            {% if merchant.inactive == False %}
               <option value="{{ merchant.id }}">{{ merchant.merchant_name }}</option>
+            {% endif %}
           {% endfor %}
         </select>
       </div>
