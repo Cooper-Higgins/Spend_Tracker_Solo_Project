@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Spend Hacker</title>
+  <title>SpendHacker 💸</title>
 </head>
 <body>
   <div id="grid-container">
     <header>
-        <nav>
+        <nav class="nav">
           <ul class="menu">
             <li><a href="/">Home</a></li>
             <li><a href="/transactions/">Transactions</a></li>
@@ -21,6 +23,9 @@
           </ul>
         </nav>
     </header>
+    <div class="head-logo">
+      <img src="/static/images/SpendHackerLogo30.svg">
+    </div>
       <section class="main-content">
         {% block content %}
         {% endblock %}
@@ -28,7 +33,7 @@
     <footer>
       <nav>
         <ul class="sitemap">
-          <li>© Spend Hacker 2023 🦄</li>
+          <li>© SpendHacker 2023 💸</li>
           <li><a href="/">Home</a></li>
           <li><a href="/transactions/">Transactions</a></li>
           <li><a href="/merchants/">Merchants</a></li>
