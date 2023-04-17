@@ -56,4 +56,5 @@ def total_value():
     results = run_sql(sql)
     #Returns as a nested list with one value(total_value) i.e. [[2809.00]]
     #SQL logic works, need format below to render without double square brackets
+    #Unknown side-effect why it is returning as a list
     return results[0][0]

@@ -10,7 +10,7 @@ CREATE TABLE users (
   dob DATE,
   city VARCHAR(255),
   email VARCHAR(255),
-  budget FLOAT
+  budget DECIMAL(16,2)
 );
 
 CREATE TABLE merchants (
@@ -27,7 +27,7 @@ CREATE TABLE categories (
 
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
-  tx_value FLOAT,
+  tx_value DECIMAL (16,2),
   merchant_name VARCHAR(255),
   category_name VARCHAR(255),
   time_stamp TIMESTAMP,
