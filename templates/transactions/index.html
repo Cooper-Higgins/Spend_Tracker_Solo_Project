@@ -3,7 +3,7 @@
 
 <h1>Your Transactions</h1>
     <ul>
-      <li>You've tracked £{{total_value}} of spending </li>
+      <li>You've tracked <strong>£{{total_value}}</strong> of spending </li>
       <li>You've spent £X (value_last_seven) this week at X merchants</li>
     </ul>
     <hr>
@@ -39,7 +39,7 @@
 
       <div>
         <label for="time_stamp">On:</label>
-        <input type="date" id="time_stamp" name="time_stamp" required>
+        <input type="datetime-local" step="1"id="time_stamp" name="time_stamp" required>
       </div>
 
       <div>
