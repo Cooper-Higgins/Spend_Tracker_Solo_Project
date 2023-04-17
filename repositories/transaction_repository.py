@@ -58,3 +58,13 @@ def total_value():
     #SQL logic works, need format below to render without double square brackets
     #Unknown side-effect why it is returning as a list
     return results[0][0]
+
+def filter_by_category():
+    sql = "SELECT * FROM transactions WHERE category_name = %s"
+    results = run_sql(sql)
+    return results
+
+def filter_by_merchant():
+    sql = "SELECT * FROM transactions WHERE merchant_name = %s"
+    results = run_sql(sql)
+    return results

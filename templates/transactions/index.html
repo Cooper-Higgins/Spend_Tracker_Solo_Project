@@ -3,8 +3,8 @@
 
 <h1>Your Transactions</h1>
     <ul>
-      <li>You've tracked <strong>£{{total_value}}</strong> of spending using Spend Hacker</li>
-      <li>💸 You've spent £X since the 1st - X% of your budget this month 💸</li>
+      <li>You've tracked <strong>£{{total_value}}</strong> with SpendHacker</li>
+      <li>💸 You've spent £X this month - X% of your monthly budget 💸</li>
     </ul>
     <hr>
 
@@ -62,18 +62,43 @@
 <hr>
 
 <h3>Filter your transactions:</h3>
-<p>placeholder for filter form</p>
-  <div class="all-transactions">   
-    {% for transaction in transactions %}
-      <div class="transaction">
-        <div class="content">
-          <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
-          <p class="tx_merchant">At: {{transaction.merchant_name}}</p>
-          <p class="tx_category">Under: {{transaction.category_name}}</p>
-          <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
-        </div>
-      </div>
-  {% endfor %}
+<form action="/transactions" method="GET"> 
+  <div class="transaction-filters">
+    <div>
+      <label for="merchant_name">Merchant:</label>
+      <select id="merchant_name" name="merchant_name">
+        {% for merchant in merchants %}
+            <option value="{{ merchant.merchant_name }}">{{ merchant.merchant_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="category_name">Category:</label>
+      <select id="category_name" name="category_name">
+        {% for category in categories %}
+          <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
   </div>
+</form>
+<br>
+<hr>
+<br>
+
+    <div class="all-transactions">   
+      {% for transaction in transactions %}
+        <div class="transaction">
+          <div class="content">
+            <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
+            <p class="tx_merchant">At: {{transaction.merchant_name}}</p>
+            <p class="tx_category">Under: {{transaction.category_name}}</p>
+            <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
 
 {% endblock %}
