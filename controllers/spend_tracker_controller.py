@@ -28,11 +28,12 @@ def merchants_index():
 
 @spend_tracker_blueprint.route("/transactions/")
 def transactions_index():
-    transactions = transaction_repository.select_all() 
+    transactions = transaction_repository.select_all()
+    total_value = transaction_repository.total_value()
     merchants = merchant_repository.select_all()
     categories = category_repository.select_all()
     users = user_repository.select_all()
-    return render_template("/transactions/index.html", transactions=transactions, merchants=merchants, categories=categories, users=users)
+    return render_template("/transactions/index.html", transactions=transactions, total_value=total_value, merchants=merchants, categories=categories, users=users)
 
 @spend_tracker_blueprint.route("/account/")
 def account_index():

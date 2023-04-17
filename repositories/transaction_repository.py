@@ -51,8 +51,9 @@ def update(transaction):
     print(values)
     run_sql(sql, values)
 
-# Need to find a way to call this in transactions/index.html 
 def total_value():
     sql = "SELECT SUM(tx_value) FROM transactions"
     results = run_sql(sql)
-    return results
+    #Returns as a nested list with one value(total_value) i.e. [[2809.00]]
+    #SQL logic works, need format below to render without double square brackets
+    return results[0][0]
