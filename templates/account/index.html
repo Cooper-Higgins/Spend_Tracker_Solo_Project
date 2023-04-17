@@ -5,35 +5,39 @@
 <h1>{{user.first_name}}, manage your account:</h1>
 {% endfor %}
 
-<hr>
-
 {% for user in users %}
-<div class="account_details">
+<div class="account-details">
     <form action="/account/{{user.id}}" method="POST">
         <div>
-            <label for="budget">New Budget:</label>
-            <input type="number" id="budget" name="budget" placeholder={{user.budget}} required autofocus>
+            <label for="budget">Budget</label>
+            <input type="number" id="budget" name="budget" value={{user.budget}} required autofocus>
         </div>
+        <br>
         <div>
-            <label for="first_name">{{user.first_name}}, what's your new forename?</label>
-            <input type="text" id="first_name" name="first_name" placeholder={{user.first_name}}>
+            <label for="first_name">Forename</label>
+            <input type="text" id="first_name" name="first_name" value={{user.first_name}}>
         </div>
+        <br>
         <div>
-            <label for="last_name">{{user.first_name}}, what's your new surname?</label>
-            <input type="text" id="last_name" name="last_name" placeholder={{user.last_name}}>
+            <label for="last_name">Surname</label>
+            <input type="text" id="last_name" name="last_name" value={{user.last_name}}>
         </div>
+        <br>
         <div>
-            <label for="dob">Did we get your birthday wrong?</label>
+            <label for="dob">Did we get your cakeday wrong?</label>
             <input type="date" id="dob" name="dob" value={{user.dob}}>
         </div>
+        <br>
         <div>
             <label for="city">Moved from {{user.city}}? Where do you stay now?</label>
-            <input type="text" id="city" name="city" placeholder={{user.city}}>
+            <input type="text" id="city" name="city" value={{user.city}}>
         </div>
+        <br>
         <div>
             <label for="email">Should we reach you on {{user.email}}, or not?</label>
-            <input type="text" id="email" name="email" placeholder={{user.email}}>
+            <input type="text" id="email" name="email" value={{user.email}}>
         </div>
+        <br>
         <button class="submit-button" type="submit">Update Details</button>
     </form>
 {% endfor %}

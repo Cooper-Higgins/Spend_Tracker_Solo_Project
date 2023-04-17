@@ -136,12 +136,12 @@ width: 80px;
 }
 
 input, select, button {
-font-size: 100%;
-width : 100%;
-padding: 10px;
-margin: 10px;
-box-sizing: border-box;
-font-family: 'Mulish', 'sans-serif';
+    font-size: 100%;
+    width : 100%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-family: 'Mulish', 'sans-serif';
 }
 
 .submit-button:hover {
@@ -157,13 +157,13 @@ font-family: 'Mulish', 'sans-serif';
     }
 
 .buttons-delete {
-margin-top: 10px;
-margin-left: 2px;
-font-size: 1.4em;
-font-family: 'Mulish', 'sans-serif';
-background-color: white;
-color: black;
-border-color: red;
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 1.4em;
+    font-family: 'Mulish', 'sans-serif';
+    background-color: white;
+    color: black;
+    border-color: red;
 }
 
 .delete-form :hover {
@@ -174,7 +174,7 @@ border-color: red;
 }
 
 .buttons-delete i {
-width: 80px;
+    width: 80px;
 }
 
 input, select, .buttons-delete {
@@ -210,20 +210,20 @@ footer {
 }
     
 .sitemap li a {
-text-decoration: none;
+    text-decoration: none;
 }
 
 .sitemap li a:visited {
-color: white;
+    color: white;
 }
 
 .sitemap li a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .sitemap li {
-padding-right: 1rem;
-list-style: none;
-color: white;
-font-size: 16px;
+    padding-right: 1rem;
+    list-style: none;
+    color: white;
+    font-size: 16px;
 }
