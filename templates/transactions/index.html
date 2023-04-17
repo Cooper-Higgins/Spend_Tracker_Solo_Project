@@ -88,14 +88,14 @@
 <hr>
 <br>
 
-    <div class="all-transactions">   
+    <div class="main-content-flex">   
       {% for transaction in transactions %}
         <div class="transaction">
           <div class="content">
-            <p class="tx_value">Spent: £{{transaction.tx_value}}</p>
-            <p class="tx_merchant">At: {{transaction.merchant_name}}</p>
-            <p class="tx_category">Under: {{transaction.category_name}}</p>
-            <p class="tx_time_stamp">On: {{transaction.time_stamp}} </p>
+            <p>Spent: £{{transaction.tx_value}}</p>
+            <p>At: {{transaction.merchant_name}}</p>
+            <p>Under: {{transaction.category_name}}</p>
+            <p>On: {{transaction.time_stamp}}</p>
           </div>
         </div>
     {% endfor %}

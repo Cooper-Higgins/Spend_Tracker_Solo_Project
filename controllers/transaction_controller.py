@@ -24,7 +24,7 @@ def create_transaction():
     category_name = request.form['category_name']
     time_stamp = request.form['time_stamp']
     user_id = request.form['user_id']
-    user        = user_repository.select(user_id)
+    user = user_repository.select(user_id)
     transaction = Transaction(tx_value, merchant_name, category_name, time_stamp, user)
     transaction_repository.create(transaction)
     return redirect('/transactions')

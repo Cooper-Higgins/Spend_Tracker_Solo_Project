@@ -26,7 +26,6 @@ header {
     display: flex;
     background-color: black;
     padding-right: 2rem;
-    flex-wrap: wrap;
 }
 
 .main-content {
@@ -59,7 +58,7 @@ header {
     font-size: 16px;
 }
 
-.all-transactions {
+.main-content-flex {
     display: flex;
     justify-content:space-evenly;
     flex-direction:row;
@@ -76,13 +75,6 @@ header {
     margin-bottom: 10px;
 }
 
-.all-merchants {
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction:row;
-    flex-wrap: wrap;
-}
-
 .merchant {
     border: 2px solid #ccc;
     width: 300px;
@@ -91,13 +83,6 @@ header {
     display: flex;
     line-height: 18px;
     margin-bottom: 10px;
-}
-
-.all-categories {
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction:row;
-    flex-wrap: wrap;
 }
 
 .category {

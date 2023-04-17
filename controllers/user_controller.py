@@ -21,3 +21,7 @@ def update_account(id):
     user = User(first_name, last_name, dob, city, email, budget, id)
     user_repository.update(user)
     return redirect('/account')
+
+#@users_blueprint.route("/transactions/")
+#def budget_utilisation():
+#    return budget_utilisation
