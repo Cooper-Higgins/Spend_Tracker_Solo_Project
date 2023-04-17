@@ -26,6 +26,7 @@ header {
     display: flex;
     background-color: black;
     padding-right: 2rem;
+    flex-wrap: wrap;
 }
 
 .main-content {
@@ -143,14 +144,16 @@ box-sizing: border-box;
 font-family: 'Mulish', 'sans-serif';
 }
 
-.submit-button a:hover {
+.submit-button:hover {
     font-size: 100%;
     width : 100%;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
     font-family: 'Mulish', 'sans-serif';
-    border-color: green;
+    border-color: black;
+    border-style:double;
+    color:green;
     }
 
 .buttons-delete {
