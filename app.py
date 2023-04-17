@@ -1,10 +1,16 @@
 from flask import Flask, render_template
 
-from controllers.spend_tracker_controller import spend_tracker_blueprint
+from controllers.category_controller import categories_blueprint
+from controllers.merchant_controller import merchants_blueprint
+from controllers.transaction_controller import transactions_blueprint
+from controllers.user_controller import users_blueprint
 
 app = Flask(__name__)
 
-app.register_blueprint(spend_tracker_blueprint)
+app.register_blueprint(categories_blueprint)
+app.register_blueprint(merchants_blueprint)
+app.register_blueprint(transactions_blueprint)
+app.register_blueprint(users_blueprint)
 
 @app.route('/')
 def home():
