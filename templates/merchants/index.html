@@ -3,27 +3,27 @@
 
 <h1>Merchants</h1>
 
-<h3>Add a new merchant:</h3>
-<form action="/merchants" method="POST">
-    <div>
-      <label for="merchant_name">Name:</label>
-      <input type="text" id="merchant_name" name="merchant_name" placeholder="i.e. Tesco" required autofocus>
-    </div>
-    <div>
-      <label for="inactive">Merchant Status:</label>
-      <select id="inactive" name="inactive">
-        <option value="false">Active</option>
-        <option value="true">Inactive</option>
-      </select>
-    </div>
-    <br>
-    <button class="submit-button" type="submit" >Add Merchant</button>
-</form>
-<br>
+  <h3>Add a new merchant:</h3>
+    <form action="/merchants" method="POST">
+        <div>
+          <label for="merchant_name">Name:</label>
+          <input type="text" id="merchant_name" name="merchant_name" placeholder="i.e. Tesco" required autofocus>
+        </div>
+        <div>
+          <label for="inactive">Merchant Status:</label>
+          <select id="inactive" name="inactive">
+            <option value="false">Active</option>
+            <option value="true">Inactive</option>
+          </select>
+        </div>
+        <br>
+        <button class="submit-button" type="submit">Add Merchant</button>
+    </form>
+  <br>
 
-<h3>Your merchants:</h3>
-  <div class="main-content-flex">
-  {% for merchant in merchants %}
+  <h3>Your merchants:</h3>
+    <div class="main-content-flex">
+    {% for merchant in merchants %}
       <div class="merchant">
         <div class="content">
           <p class="edit-item"><a class="edit-link" href="/merchants/{{merchant.id}}">{{merchant.merchant_name}}</a></p>
@@ -32,7 +32,7 @@
             </form>
         </div>
       </div>
-  {% endfor %}
-  </div>
+    {% endfor %}
+    </div>
 
 {% endblock %}

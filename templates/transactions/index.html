@@ -6,7 +6,7 @@
       <li>You've tracked <strong>£{{total_value}}</strong> with SpendHacker</li>
       <li>💸 You've spent £X this month - X% of your monthly budget 💸</li>
     </ul>
-    <hr>
+  <hr>
 
   <h3>Add a new transaction:</h3>
     <form action="/transactions" method="POST">  
@@ -31,7 +31,7 @@
         <select id="category_name" name="category_name">
           {% for category in categories %}
             {% if category.inactive == False %}
-            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+              <option value="{{ category.category_name }}">{{ category.category_name }}</option>
             {% endif %}
           {% endfor %}
         </select>
@@ -50,43 +50,43 @@
           {% endfor %}
         </select>
       </div>
-
       <br>
       <button class="submit-button" type="submit">Add Transaction</button>
   </form>
-<br>
+  <br>
 
-<div class="sidebar" style="width:100%"><div style="height:0;padding-bottom:56.69291338582677%;position:relative;width:100%"><iframe allowfullscreen="" frameBorder="0" height="100%" src="https://giphy.com/embed/qXR53U25GPeocwivdd/video" style="left:0;position:absolute;top:0" width="100%"></iframe></div></div>
+  <div class="sidebar" style="width:100%"><div style="height:0;padding-bottom:56.69291338582677%;position:relative;width:100%"><iframe allowfullscreen="" frameBorder="0" height="100%" src="https://giphy.com/embed/qXR53U25GPeocwivdd/video" style="left:0;position:absolute;top:0" width="100%"></iframe></div></div>
 
-<br>
-<hr>
+  <br>
+  <hr>
 
-<h3>Filter your transactions:</h3>
-<form action="/transactions" method="GET"> 
-  <div class="transaction-filters">
-    <div>
-      <label for="merchant_name">Merchant:</label>
-      <select id="merchant_name" name="merchant_name">
-        {% for merchant in merchants %}
-            <option value="{{ merchant.merchant_name }}">{{ merchant.merchant_name }}</option>
-        {% endfor %}
-      </select>
+  <h3>Filter your transactions:</h3>
+  <form action="/transactions" method="GET"> 
+    <div class="transaction-filters">
+      <div>
+        <label for="merchant_name">Merchant:</label>
+        <select id="merchant_name" name="merchant_name">
+          {% for merchant in merchants %}
+              <option value="{{ merchant.merchant_name }}">{{ merchant.merchant_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div>
+        <label for="category_name">Category:</label>
+        <select id="category_name" name="category_name">
+          {% for category in categories %}
+            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
     </div>
-
-    <div>
-      <label for="category_name">Category:</label>
-      <select id="category_name" name="category_name">
-        {% for category in categories %}
-          <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-        {% endfor %}
-      </select>
-    </div>
-
-  </div>
-</form>
-<br>
-<hr>
-<br>
+  </form>
+  
+  <br>
+  <hr>
+  <br>
 
     <div class="main-content-flex">   
       {% for transaction in transactions %}

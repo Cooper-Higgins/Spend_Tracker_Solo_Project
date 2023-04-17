@@ -1,34 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
-  <h1>Update: {{category.category_name}}</h1>
   <div>
-    {% if category.inactive == False %} 
-      <p class="active-tag">Category Active</p>
-    {% else %}
-      <p class="inactive-tag">Category Inactive</p>
-    {% endif %}
+    <h1>Update: {{category.category_name}}</h1>
+      <div>
+        {% if category.inactive == False %} 
+          <p class="active-tag">Category Active</p>
+        {% else %}
+          <p class="inactive-tag">Category Inactive</p>
+        {% endif %}
+    </div>
+    <hr>
   </div>
-  <hr>
-</div>
 
-<div>
-  <form action="/categories/{{category.id}}" method="post">    
-    <div>
-      <label for="category">Name:</label>
-      <input type="text" id="category_name" name="category_name" value="{{category.name}}" required autofocus>
-    </div>
+  <div>
+    <form action="/categories/{{category.id}}" method="post">    
+      <div>
+        <label for="category">Name:</label>
+        <input type="text" id="category_name" name="category_name" value="{{category.name}}" required autofocus>
+      </div>
 
-    <div>
-      <label for="inactive">Set Category Status:</label>
-        <select id="inactive" name="inactive">
-          <option value="false">Active</option>
-          <option value="true">Inactive</option>
-        </select>
-    </div>
-    <button class="submit-button" type="submit">Update Category</button>
-  </form>
-</div>
+      <div>
+        <label for="inactive">Set Category Status:</label>
+          <select id="inactive" name="inactive">
+            <option value="false">Active</option>
+            <option value="true">Inactive</option>
+          </select>
+      </div>
+      <button class="submit-button" type="submit">Update Category</button>
+    </form>
+  </div>
 
 {% endblock %}
