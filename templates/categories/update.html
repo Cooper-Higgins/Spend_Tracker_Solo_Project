@@ -15,7 +15,6 @@
 
 <div>
   <form action="/categories/{{category.id}}" method="post">    
-    <button type="submit">Update Category</button>
     <div>
       <label for="category">Name:</label>
       <input type="text" id="category_name" name="category_name" value="{{category.name}}" required autofocus>
@@ -28,6 +27,7 @@
           <option value="true">Inactive</option>
         </select>
     </div>
+    <button class="submit-button" type="submit">Update Category</button>
   </form>
 </div>
 

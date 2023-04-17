@@ -14,8 +14,7 @@
 </div>
 
 <div>
-  <form action="/merchants/{{merchant.id}}" method="post">    
-    <button type="submit">Update Merchant</button>
+  <form action="/merchants/{{merchant.id}}" method="post"> 
     <div>
       <label for="merchant">Name:</label>
       <input type="text" id="merchant_name" name="merchant_name" value="{{merchant.name}}" required autofocus>
@@ -28,6 +27,7 @@
           <option value="true">Inactive</option>
         </select>
     </div>
+    <button class="submit-button" type="submit">Update Merchant</button>
   </form>
 </div>
 
