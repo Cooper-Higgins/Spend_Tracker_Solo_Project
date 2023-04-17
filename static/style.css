@@ -183,6 +183,14 @@ input, select, .buttons-delete {
     font-family: 'Mulish', 'sans-serif';
     }
 
+.active-tag {
+    color: green;
+}
+
+.inactive-tag {
+    color: red;
+}
+
 footer {
     grid-area: footer; 
     display: flex;

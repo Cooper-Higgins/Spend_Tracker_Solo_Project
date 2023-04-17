@@ -3,13 +3,13 @@
 
 <div>
   <h1>Update {{merchant.merchant_name}}</h1>
-  <p>Current Status: 
+  <div>
     {% if merchant.inactive == False %} 
-      Active
+      <p class="active-tag">Merchant Active</p>
     {% else %}
-      Inactive
+      <p class="inactive-tag">Merchant Inactive</p>
     {% endif %}
-  </p>
+  </div>
   <hr>
 </div>
 

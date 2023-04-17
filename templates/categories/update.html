@@ -3,13 +3,13 @@
 
 <div>
   <h1>Update: {{category.category_name}}</h1>
-  <p>Current Status: 
+  <div>
     {% if category.inactive == False %} 
-      Active
+      <p class="active-tag">Category Active</p>
     {% else %}
-      Inactive
+      <p class="inactive-tag">Category Inactive</p>
     {% endif %}
-  </p>
+  </div>
   <hr>
 </div>
 
