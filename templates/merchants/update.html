@@ -2,8 +2,7 @@
 {% block content %}
 
 <div>
-  <h1>Update Merchant</h1>
-  <h2>{{merchant.merchant_name}}</h2>
+  <h1>Update {{merchant.merchant_name}}</h1>
   <p>Current Status: 
     {% if merchant.inactive == False %} 
       Active

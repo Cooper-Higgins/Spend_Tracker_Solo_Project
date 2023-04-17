@@ -22,16 +22,17 @@
 <br>
 
 <h3>Your merchants:</h3>
-{% for merchant in merchants %}
-  <div class="merchant">
-    <div class="merchant_name">
-      {{merchant.merchant_name}}: <a href="/merchants/{{merchant.id}}">Edit</a>
-      <form class="delete-form" action="/merchants/{{merchant.id}}/delete" method="POST">
-        <button class="buttons-delete">Delete {{merchant.merchant_name}}</button>
-      </form>
-    </div>
+  <div class="all-merchants">
+  {% for merchant in merchants %}
+      <div class="merchant">
+        <div class="content">
+          <p class="edit-item"><a class="edit-link" href="/merchants/{{merchant.id}}">{{merchant.merchant_name}}</a></p>
+            <form class="delete-form" action="/merchants/{{merchant.id}}/delete" method="POST">
+              <button class="buttons-delete">Delete '{{merchant.merchant_name}}'</button>
+            </form>
+        </div>
+      </div>
+  {% endfor %}
   </div>
-
-{% endfor %}
 
 {% endblock %}

@@ -40,42 +40,63 @@ header {
 }
     
 .menu li a {
-text-decoration: none;
+    text-decoration: none;
 }
 
 .menu li a:visited {
-color: white;
+    color: white;
 }
 
 .menu li a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .menu li {
-padding-right: 1rem;
-list-style: none;
-color: white;
-font-size: 16px;
+    padding-right: 1rem;
+    list-style: none;
+    color: white;
+    font-size: 16px;
+}
+
+.all-transactions {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+    flex-wrap: wrap;
 }
 
 .transaction {
-border: 2px solid #ccc;
-width: 300px;
-min-height: 68px;
-padding: 10px;
-display: flex;
-line-height: 18px;
-margin-bottom: 10px;
+    border: 2px solid #ccc;
+    width: 300px;
+    min-height: 68px;
+    padding: 10px;
+    display: flex;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.all-merchants {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+    flex-wrap: wrap;
 }
 
 .merchant {
-border: 2px solid #ccc;
-width: 300px;
-min-height: 68px;
-padding: 10px;
-display: flex;
-line-height: 18px;
-margin-bottom: 10px;
+    border: 2px solid #ccc;
+    width: 300px;
+    min-height: 68px;
+    padding: 10px;
+    display: flex;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.all-categories {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+    flex-wrap: wrap;
 }
 
 .category {
@@ -86,6 +107,19 @@ padding: 10px;
 display: flex;
 line-height: 18px;
 margin-bottom: 10px;
+}
+
+.edit-item {
+    margin: 10px;
+}
+
+.edit-item a:hover {
+    text-decoration: underline;
+}
+
+.edit-link {
+    text-decoration: none;
+    color: black;
 }
 
 .buttons {
@@ -138,13 +172,6 @@ input, select, .buttons-delete {
     box-sizing: border-box;
     font-family: 'Mulish', 'sans-serif';
     }
-
-.all-transactions {
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction:row;
-    flex-wrap: wrap;
-}
 
 footer {
     grid-area: footer; 
