@@ -100,13 +100,13 @@ header {
 }
 
 .category {
-border: 2px solid #ccc;
-width: 300px;
-min-height: 68px;
-padding: 10px;
-display: flex;
-line-height: 18px;
-margin-bottom: 10px;
+    border: 2px solid #ccc;
+    width: 300px;
+    min-height: 68px;
+    padding: 10px;
+    display: flex;
+    line-height: 18px;
+    margin-bottom: 10px;
 }
 
 .edit-item {
@@ -123,11 +123,11 @@ margin-bottom: 10px;
 }
 
 .buttons {
-margin-top: 10px;
-margin-left: 2px;
-font-size: 1.4em;
-font-family: 'Mulish', 'sans-serif';
-color: #aab8c2;
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 1.4em;
+    font-family: 'Mulish', 'sans-serif';
+    color: #aab8c2;
 }
 
 .buttons i {
@@ -142,6 +142,16 @@ margin: 10px;
 box-sizing: border-box;
 font-family: 'Mulish', 'sans-serif';
 }
+
+.submit-button a:hover {
+    font-size: 100%;
+    width : 100%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-family: 'Mulish', 'sans-serif';
+    border-color: green;
+    }
 
 .buttons-delete {
 margin-top: 10px;
