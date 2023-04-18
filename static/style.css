@@ -96,6 +96,39 @@ header {
     margin-bottom: 10px;
 }
 
+.dashboard-flex {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+
+#dashboard-title {
+    display: flex;
+    justify-content: center;
+}
+
+.insight {
+    border: 5px solid #00a49e;
+    width: 400px;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    line-height: 18px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.insight-title {
+    font-weight: 900;
+}
+
+.insight-output {
+    text-align: center;
+}
+
 .edit-item {
     margin: 10px;
 }

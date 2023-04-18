@@ -2,38 +2,32 @@
 {% block content %}
 
 {% for user in users%}
-<h1>{{user.first_name}}'s Spending Insights:</h1>
+<h1 id="dashboard-title">{{user.first_name}}'s Dashboard</h1>
 {% endfor %}
   
-    <div class="main-content-flex">   
-        <div class="transaction">
+    <div class="dashboard-flex">   
+        <div class="insight">
             <div class="content">
                 <p class="insight-title">Total Tracked</p>
                 <p class="insight-output">£{{total_value}}</p>
             </div>
         </div>
-    </div>
 
-    <div class="main-content-flex">   
-        <div class="transaction">
+        <div class="insight">
             <div class="content">
                 <p class="insight-title">Total Merchants</p>
                 <p class="insight-output">{{num_merchants}}</p>
             </div>
         </div>
-    </div>
-
-    <div class="main-content-flex">   
-        <div class="transaction">
+ 
+        <div class="insight">
             <div class="content">
                 <p class="insight-title">Total Categories</p>
                 <p class="insight-output">{{num_categories}}</p>
             </div>
         </div>
-    </div>
-
-    <div class="main-content-flex">   
-        <div class="transaction">
+  
+        <div class="insight">
             <div class="content">
                 <p class="insight-title">Current Budget</p>
                 {% for user in users %}

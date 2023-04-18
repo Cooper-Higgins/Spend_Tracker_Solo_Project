@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Your Transactions</h1>
+{% for user in users%}
+<h1>{{user.first_name}}'s Transactions:</h1>
+{% endfor %}
+
     <ul>
       <li>You've tracked <strong>£{{total_value}}</strong> with SpendHacker</li>
       <li>💸 You've spent £X this month - X% of your monthly budget 💸</li>
