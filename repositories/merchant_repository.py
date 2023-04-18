@@ -45,3 +45,14 @@ def update(merchant):
     sql = "UPDATE merchants SET (merchant_name, inactive) = (%s, %s) WHERE id = %s"
     values = [merchant.merchant_name, merchant.inactive, merchant.id]
     run_sql(sql, values)
+
+def num_merchants():
+    merchants = []
+
+    sql = "SELECT * FROM merchants"
+    results = run_sql(sql)
+
+    for row in results:
+        merchant = Merchant(row['merchant_name'], row['inactive'], row['id'])
+        merchants.append(merchant)
+    return len(merchants)

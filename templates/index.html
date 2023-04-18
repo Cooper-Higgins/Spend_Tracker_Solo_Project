@@ -1,11 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Your Transactions</h1>
-    <ul>
-      <li>You've tracked <strong>£{{total_value}}</strong> with SpendHacker</li>
-      <li>💸 You've spent £X this month - X% of your monthly budget 💸</li>
-    </ul>
-  <hr>
+{% for user in users%}
+<h1>{{user.first_name}}'s Spending Insights:</h1>
+{% endfor %}
+  
+    <div class="main-content-flex">   
+        <div class="transaction">
+            <div class="content">
+                <p class="insight-title">Total Tracked</p>
+                <p class="insight-output">£{{total_value}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-flex">   
+        <div class="transaction">
+            <div class="content">
+                <p class="insight-title">Total Merchants</p>
+                <p class="insight-output">{{num_merchants}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-flex">   
+        <div class="transaction">
+            <div class="content">
+                <p class="insight-title">Total Categories</p>
+                <p class="insight-output">{{num_categories}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-flex">   
+        <div class="transaction">
+            <div class="content">
+                <p class="insight-title">Current Budget</p>
+                {% for user in users %}
+                    <p class="insight-output">£{{user.budget}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

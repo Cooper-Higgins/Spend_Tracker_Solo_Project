@@ -45,3 +45,14 @@ def update(category):
     sql = "UPDATE categories SET (category_name, inactive) = (%s, %s) WHERE id = %s"
     values = [category.category_name, category.inactive, category.id]
     run_sql(sql, values)
+
+def num_categories():
+    categories = []
+
+    sql = "SELECT * FROM categories"
+    results = run_sql(sql)
+
+    for row in results:
+        category = Category(row['category_name'], row['inactive'], row['id'])
+        categories.append(category)
+    return len(categories)
