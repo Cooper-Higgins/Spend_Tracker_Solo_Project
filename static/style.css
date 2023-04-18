@@ -96,6 +96,13 @@ header {
     margin-bottom: 10px;
 }
 
+.dashboard-content {
+    grid-area: main;   
+    padding: 2rem;
+    min-height: 75vh;
+    background-color:black;
+}
+
 .dashboard-flex {
     display: flex;
     justify-content:space-evenly;
@@ -103,9 +110,14 @@ header {
     flex-wrap: wrap;
 }
 
+.dashboard-hr {
+    color: white;
+}
+
 #dashboard-title {
     display: flex;
     justify-content: center;
+    color: white
 }
 
 .insight {
@@ -123,10 +135,12 @@ header {
 
 .insight-title {
     font-weight: 900;
+    color: white;
 }
 
 .insight-output {
     text-align: center;
+    color: white;
 }
 
 .edit-item {

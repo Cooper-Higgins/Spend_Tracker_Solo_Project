@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<section class="main-content">
 {% for user in users%}
 <h1>{{user.first_name}}, manage your account:</h1>
 {% endfor %}
@@ -42,5 +43,5 @@
         </form>
     {% endfor %}
     </div>
-
+</section>
 {% endblock %}
