@@ -56,3 +56,14 @@ def num_categories():
         category = Category(row['category_name'], row['inactive'], row['id'])
         categories.append(category)
     return len(categories)
+
+def num_active_categories():
+    active_categories = []
+
+    sql = "SELECT * FROM categories WHERE inactive = False"
+    results = run_sql(sql)
+
+    for row in results:
+        category = Category(row['category_name'], row['inactive'], row['id'])
+        active_categories.append(category)
+    return len(active_categories)

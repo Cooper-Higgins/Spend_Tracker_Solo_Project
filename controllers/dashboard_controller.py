@@ -15,6 +15,8 @@ def dashboard_index():
      transactions = transaction_repository.select_all()
      total_value = transaction_repository.total_value()
      num_merchants = merchant_repository.num_merchants()
+     num_active_merchants = merchant_repository.num_active_merchants()
      num_categories = category_repository.num_categories()
+     num_active_categories = category_repository.num_active_categories()
 
-     return render_template("/index.html", users=users, merchants=merchants, categories=categories, transactions=transactions, total_value=total_value, num_merchants=num_merchants, num_categories=num_categories)
+     return render_template("/index.html", users=users, merchants=merchants, categories=categories, transactions=transactions, total_value=total_value, num_merchants=num_merchants, num_active_merchants = num_active_merchants, num_categories=num_categories, num_active_categories = num_active_categories)

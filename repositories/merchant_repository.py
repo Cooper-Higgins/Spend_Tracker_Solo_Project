@@ -56,3 +56,14 @@ def num_merchants():
         merchant = Merchant(row['merchant_name'], row['inactive'], row['id'])
         merchants.append(merchant)
     return len(merchants)
+
+def num_active_merchants():
+    active_merchants = []
+
+    sql = "SELECT * FROM merchants WHERE inactive = False"
+    results = run_sql(sql)
+
+    for row in results:
+        merchant = Merchant(row['merchant_name'], row['inactive'], row['id'])
+        active_merchants.append(merchant)
+    return len(active_merchants)
