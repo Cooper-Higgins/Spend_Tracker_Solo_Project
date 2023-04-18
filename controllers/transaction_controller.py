@@ -15,7 +15,8 @@ def transactions_index():
     merchants = merchant_repository.select_all()
     categories = category_repository.select_all()
     users = user_repository.select_all()
-    return render_template("/transactions/index.html", transactions=transactions, total_value=total_value, merchants=merchants, categories=categories, users=users)
+    filter_by_category = transaction_repository.filter_by_category()
+    return render_template("/transactions/index.html", transactions=transactions, total_value=total_value, merchants=merchants, categories=categories, users=users, filter_by_category=filter_by_category)
 
 @transactions_blueprint.route("/transactions", methods=['POST'])
 def create_transaction():

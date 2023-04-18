@@ -121,7 +121,7 @@ header {
 }
 
 .insight {
-    border: 5px solid #00a49e;
+    border: 5px solid grey;
     width: 400px;
     min-height: 200px;
     padding: 10px;
@@ -131,16 +131,32 @@ header {
     justify-content: center;
     align-items: center;
     font-size: x-large;
+    background-color: white;
 }
 
 .insight-title {
     font-weight: 900;
-    color: white;
+    color: black;
 }
 
 .insight-output {
     text-align: center;
-    color: white;
+    color: black;
+}
+
+.under-budget {
+    text-align: center;
+    color: green;
+}
+
+.near-budget {
+    text-align: center;
+    color: orange;
+}
+
+.over-budget {
+    text-align: center;
+    color: red;
 }
 
 .edit-item {

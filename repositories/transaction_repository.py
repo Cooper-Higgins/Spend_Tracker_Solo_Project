@@ -60,11 +60,13 @@ def total_value():
     return results[0][0]
 
 def filter_by_category():
+    transactions = []
+
     sql = "SELECT * FROM transactions WHERE category_name = %s"
     results = run_sql(sql)
-    return results
 
-def filter_by_merchant():
-    sql = "SELECT * FROM transactions WHERE merchant_name = %s"
-    results = run_sql(sql)
-    return results
+    for row in results:
+        user = user_repository.select(row['user_id'])
+        transaction = Transaction(row['tx_value'], row['merchant_name'], row['category_name'], row['time_stamp'], user, row['id'] )
+        transactions.append(transaction)
+    return transactions
