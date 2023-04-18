@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-Hopefully a dashboard
+<h1>Your Transactions</h1>
+    <ul>
+      <li>You've tracked <strong>£{{total_value}}</strong> with SpendHacker</li>
+      <li>💸 You've spent £X this month - X% of your monthly budget 💸</li>
+    </ul>
+  <hr>
 
 {% endblock %}
