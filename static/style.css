@@ -210,6 +210,11 @@ input, select, button {
     color:green;
     }
 
+.filter-flex-container {
+    display:flex;
+    justify-content: center;
+}
+
 .buttons-delete {
     margin-top: 10px;
     margin-left: 2px;
