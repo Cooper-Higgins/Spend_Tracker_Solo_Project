@@ -49,7 +49,7 @@
 
       <div>
         <label for="time_stamp">On:</label>
-        <input type="datetime-local" step="1"id="time_stamp" name="time_stamp" required>
+        <input type="datetime-local" step="1" id="time_stamp" name="time_stamp" required>
       </div>
 
       <div>
@@ -70,28 +70,23 @@
   <br>
   <hr>
 
-  <h3>Filter your transactions:</h3>
-  <form action="/transactions" method="GET"> 
-    <div class="transaction-filters">
-      <div>
-        <label for="merchant_name">Merchant:</label>
-        <select id="merchant_name" name="merchant_name">
-          {% for merchant in merchants %}
-              <option value="{{ merchant.merchant_name }}">{{ merchant.merchant_name }}</option>
-          {% endfor %}
-        </select>
-      </div>
+  <h3>Filter your transactions:</h3>  
+      <form class="filter-input" action="/transactions/bymerchant" method="POST"> 
+            <select name="merchant_name">
+              {% for merchant in merchants %}
+                  <option value="{{ merchant.merchant_name }}">{{ merchant.merchant_name }}</option>
+              {% endfor %}
+            </select>
+        <button class="submit-button" type="submit">Filter By Merchant</button>
+      </form>
 
-      <div>
-        <label for="category_name">Category:</label>
-        <select id="category_name" name="category_name">
+  <form class="filter-input" action="/transactions/bycategory" method="POST"> 
+        <select name="category_name">
           {% for category in categories %}
             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
           {% endfor %}
         </select>
-      </div>
-
-    </div>
+    <button class="submit-button" type="submit">Filter By Category</button>
   </form>
   
   <br>

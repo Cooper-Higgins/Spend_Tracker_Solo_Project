@@ -15,8 +15,7 @@ def transactions_index():
     merchants = merchant_repository.select_all()
     categories = category_repository.select_all()
     users = user_repository.select_all()
-    filter_by_category = transaction_repository.filter_by_category()
-    return render_template("/transactions/index.html", transactions=transactions, total_value=total_value, merchants=merchants, categories=categories, users=users, filter_by_category=filter_by_category)
+    return render_template("/transactions/index.html", transactions=transactions, total_value=total_value, merchants=merchants, categories=categories, users=users)
 
 @transactions_blueprint.route("/transactions", methods=['POST'])
 def create_transaction():
@@ -39,3 +38,23 @@ def show_transaction(id):
 def delete_transaction(id):
     transaction_repository.delete(id)
     return redirect('/transactions')
+
+@transactions_blueprint.route("/transactions/bycategory", methods=['POST'])
+def filter_by_category():
+    category_name = request.form['category_name']
+    filtered_by_category = transaction_repository.filter_by_category(category_name)
+    total_value = transaction_repository.total_value()
+    merchants = merchant_repository.select_all()
+    categories = category_repository.select_all()
+    users = user_repository.select_all()
+    return render_template("/transactions/index.html", transactions=filtered_by_category, total_value=total_value, merchants=merchants, categories=categories, users=users)
+
+@transactions_blueprint.route("/transactions/bymerchant", methods=['POST'])
+def filter_by_merchant():
+    merchant_name = request.form['merchant_name']
+    filtered_by_merchant = transaction_repository.filter_by_merchant(merchant_name)
+    total_value = transaction_repository.total_value()
+    merchants = merchant_repository.select_all()
+    categories = category_repository.select_all()
+    users = user_repository.select_all()
+    return render_template("/transactions/index.html", transactions=filtered_by_merchant, total_value=total_value, merchants=merchants, categories=categories, users=users)

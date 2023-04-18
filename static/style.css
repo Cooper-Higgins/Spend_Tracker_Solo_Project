@@ -193,6 +193,11 @@ input, select, button {
     font-family: 'Mulish', 'sans-serif';
 }
 
+.filter-input {
+    display:flex;
+    justify-content: row;
+}
+
 .submit-button:hover {
     font-size: 100%;
     width : 100%;

@@ -59,14 +59,29 @@ def total_value():
     #Unknown side-effect why it is returning as a list
     return results[0][0]
 
-def filter_by_category():
-    transactions = []
+def filter_by_category(category_name):
+    filtered_categories = []
 
-    sql = "SELECT * FROM transactions WHERE category_name = %s"
-    results = run_sql(sql)
+    sql = "SELECT * FROM transactions WHERE category_name = %s ORDER BY time_stamp ASC"
+    values = [category_name]
+    results = run_sql(sql, values)
 
     for row in results:
         user = user_repository.select(row['user_id'])
         transaction = Transaction(row['tx_value'], row['merchant_name'], row['category_name'], row['time_stamp'], user, row['id'] )
-        transactions.append(transaction)
-    return transactions
+        filtered_categories.append(transaction)
+    print(filtered_categories)
+    return filtered_categories
+
+def filter_by_merchant(merchant_name):
+    filtered_merchants = []
+
+    sql = "SELECT * FROM transactions WHERE merchant_name = %s ORDER BY time_stamp ASC"
+    values = [merchant_name]
+    results = run_sql(sql, values)
+
+    for row in results:
+        user = user_repository.select(row['user_id'])
+        transaction = Transaction(row['tx_value'], row['merchant_name'], row['category_name'], row['time_stamp'], user, row['id'] )
+        filtered_merchants.append(transaction)
+    return filtered_merchants
