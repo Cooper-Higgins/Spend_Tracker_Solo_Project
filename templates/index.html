@@ -15,6 +15,15 @@
 
         <div class="insight">
             <div class="content">
+                <p class="insight-title">Current Budget</p>
+                {% for user in users %}
+                    <p class="insight-output">£{{user.budget}}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="insight">
+            <div class="content">
                 <p class="insight-title">Total Merchants</p>
                 <p class="insight-output">{{num_merchants}}</p>
             </div>
@@ -27,14 +36,6 @@
             </div>
         </div>
   
-        <div class="insight">
-            <div class="content">
-                <p class="insight-title">Current Budget</p>
-                {% for user in users %}
-                    <p class="insight-output">£{{user.budget}}</p>
-                {% endfor %}
-            </div>
-        </div>
     </div>
 
 {% endblock %}

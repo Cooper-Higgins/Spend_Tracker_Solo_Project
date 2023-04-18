@@ -14,7 +14,7 @@ def create(transaction):
 def select_all():
     transactions = []
 
-    sql = "SELECT * FROM transactions"
+    sql = "SELECT * FROM transactions ORDER BY time_stamp ASC"
     results = run_sql(sql)
 
     for row in results:
