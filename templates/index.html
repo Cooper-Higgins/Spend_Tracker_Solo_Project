@@ -19,7 +19,7 @@
             <div class="content">
                 <p class="insight-title">Current Budget</p>
                 {% for user in users %}
-                    {% if user.budget > total_value %}
+                    {% if user.budget >= total_value %}
                         <p class="under-budget">💰£{{user.budget}}💰</p>
                     {% else %}
                         <p class="over-budget">🔥£{{user.budget}}🔥</p>
