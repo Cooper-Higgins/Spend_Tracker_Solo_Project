@@ -3,6 +3,3 @@ class Merchant:
         self.merchant_name = merchant_name
         self.inactive = inactive
         self.id = id
-
-    def mark_inactive(self):
-        self.inactive = True

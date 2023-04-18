@@ -3,6 +3,3 @@ class Category:
         self.category_name = category_name
         self.inactive = inactive
         self.id = id
-
-    def mark_inactive(self):
-        self.inactive = True

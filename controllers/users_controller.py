@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import render_template, request, redirect
 from flask import Blueprint
 from models.user import User
 import repositories.user_repository as user_repository
@@ -21,7 +21,3 @@ def update_account(id):
     user = User(first_name, last_name, dob, city, email, budget, id)
     user_repository.update(user)
     return redirect('/account')
-
-#@users_blueprint.route("/transactions/")
-#def budget_utilisation():
-#    return budget_utilisation

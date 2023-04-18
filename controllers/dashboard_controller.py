@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import render_template
 from flask import Blueprint
 import repositories.category_repository as category_repository
 import repositories.merchant_repository as merchant_repository
