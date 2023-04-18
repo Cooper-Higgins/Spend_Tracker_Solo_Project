@@ -66,7 +66,7 @@ transaction_4 = Transaction(2.50, 'Andina', 'Cafés', '04/04/2023 08:31:45', use
 transaction_repository.create(transaction_4)
 transaction_5 = Transaction(13.99, 'Spotify', 'Subscriptions', '05/04/2023 08:00:00', user_1)
 transaction_repository.create(transaction_5)
-transaction_6 = Transaction(27.00, 'GlasgowLife', 'Leisure', '05/04/2023 05:00:00', user_1)
+transaction_6 = Transaction(27.00, 'Glasgow Life', 'Leisure', '05/04/2023 05:00:00', user_1)
 transaction_repository.create(transaction_6)
 transaction_7 = Transaction(450.00, 'Barclays', 'Finances', '05/04/2023 06:00:00', user_1)
 transaction_repository.create(transaction_7)

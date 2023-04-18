@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='tablet.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='mobile.css') }}">
   <title>SpendHacker 💸</title>
 </head>
 <body>
@@ -31,7 +33,7 @@
         {% endblock %}
       </section>
     <footer>
-      <nav>
+      <nav class="nav-flex">
         <ul class="sitemap">
           <li>© SpendHacker 2023 💸</li>
           <li><a href="/">Home</a></li>

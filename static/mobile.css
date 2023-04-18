@@ -1,0 +1,24 @@
+@media (max-width: 390px) {
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .main-content {
+        width: 70%;
+    }
+
+    .main-content-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sitemap {
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+  }
