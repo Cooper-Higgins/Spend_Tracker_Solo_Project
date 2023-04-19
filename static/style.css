@@ -181,7 +181,7 @@ header {
 }
 
 .buttons i {
-width: 80px;
+    width: 80px;
 }
 
 input, select, button {
@@ -208,7 +208,12 @@ input, select, button {
     border-color: black;
     border-style:double;
     color:green;
-    }
+}
+
+
+#filter-reset-button {
+    margin-right: 20px;
+}
 
 .filter-flex-container {
     display:flex;
