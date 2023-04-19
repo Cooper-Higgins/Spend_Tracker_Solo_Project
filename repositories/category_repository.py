@@ -46,6 +46,7 @@ def update(category):
     values = [category.category_name, category.inactive, category.id]
     run_sql(sql, values)
 
+# Returns total number of categories, essentially taking the select_all function but returning using len - used in the dashboard view
 def num_categories():
     categories = []
 
@@ -57,6 +58,7 @@ def num_categories():
         categories.append(category)
     return len(categories)
 
+# As above, but only for active categories - used in the dashboard view
 def num_active_categories():
     active_categories = []
 

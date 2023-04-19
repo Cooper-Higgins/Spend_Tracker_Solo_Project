@@ -10,6 +10,10 @@ The Brief & App Capability:
 - User can supply a budget, and the app alerts the user somehow when when they have gone over it
 - User can filter their view of transactions, for example, to view all transactions by a Merchant or Category
 
+Brief Constraints:
+- No use of JavaScript, CSS frameworks (i.e. Bootstrap), Object Relational Mappers (i.e. ActiveRecord), or Authentication (assumes a logged in user)
+- Must only be built (as it was) using Python, Flask, PostgreSQL/psycopg and HTML/CSS
+
 To Run:
 - Prerequisites = Python 3, SQL/Postgresql, Flask 
 1. Open spend_tracker_project/db in the terminal 
@@ -19,7 +23,7 @@ To Run:
 5. Open http://127.0.0.1:4999 in a browser (only fully tested in Chrome v112.0.5615.121)
 
 Known Unresolved Bugs:
-1. Transactions - When user filters transactions by category, it takes user back to the top of the transact page rather than anchored link to the view of transactions
+1. Transactions - When user filters transactions by category, it takes user back to the top of the transact page rather than anchored link to the view of transactions (hypothesis is that it needs JavaScript to work - out of scope of this project)
 2. Account - When user enters a string with spaces i.e. "New York City" for their city, it populates correctly in the database, but the value displaying in the form only returns the first 'part' of that string up to the first space, i.e. "New"
 
 Possible Extensions:

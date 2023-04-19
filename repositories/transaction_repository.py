@@ -59,6 +59,7 @@ def total_value():
     #Unknown side-effect why it is returning as a list
     return results[0][0]
 
+# Returns transactions filtered by category, using the core of the select_all function with updated SQL
 def filter_by_category(category_name):
     filtered_categories = []
 
@@ -73,6 +74,7 @@ def filter_by_category(category_name):
     print(filtered_categories)
     return filtered_categories
 
+# As above, for merchant filtering
 def filter_by_merchant(merchant_name):
     filtered_merchants = []
 
